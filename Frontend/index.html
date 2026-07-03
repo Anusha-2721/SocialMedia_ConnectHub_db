@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConnectHub | Social Media Platform</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+<i class="fa-solid fa-share-nodes"></i>
+<span>ConnectHub</span>
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#">Home</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="login.html">Login</a></li>
+
+</ul>
+
+<a href="register.html" class="btn">Register</a>
+
+<div class="menu">
+<i class="fa-solid fa-bars"></i>
+</div>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+Connect.<br>
+Share.<br>
+Grow Together.
+</h1>
+
+<p>
+
+Join thousands of people sharing ideas,
+memories and experiences every day.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="primary-btn">
+Get Started
+</a>
+
+<a href="#features" class="secondary-btn">
+Explore
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-right">
+
+<div class="glass-card">
+
+<i class="fa-solid fa-user-group"></i>
+
+<h3>50K+</h3>
+
+<p>Active Users</p>
+
+</div>
+
+<div class="glass-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>1M+</h3>
+
+<p>Likes Everyday</p>
+
+</div>
+
+<div class="glass-card">
+
+<i class="fa-solid fa-camera"></i>
+
+<h3>250K+</h3>
+
+<p>Posts Shared</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features" id="features">
+
+<h2>Awesome Features</h2>
+
+<div class="feature-container">
+
+<div class="feature-card">
+
+<i class="fa-solid fa-user"></i>
+
+<h3>User Profiles</h3>
+
+<p>Create your own profile and connect with everyone.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-image"></i>
+
+<h3>Create Posts</h3>
+
+<p>Share photos, thoughts and daily moments instantly.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>Likes</h3>
+
+<p>Like and react to posts from your friends.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-comments"></i>
+
+<h3>Comments</h3>
+
+<p>Start conversations and engage with everyone.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<h3>Follow Users</h3>
+
+<p>Follow your favorite people and creators.</p>
+
+</div>
+
+<div class="feature-card">
+
+<i class="fa-solid fa-lock"></i>
+
+<h3>Secure Login</h3>
+
+<p>Your account stays protected with secure authentication.</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about" id="about">
+
+<h2>Why ConnectHub?</h2>
+
+<p>
+
+ConnectHub is a modern social media platform where users can
+share moments, connect with friends and build communities.
+
+</p>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+<h2>Ready to Join?</h2>
+
+<p>Create your free account today.</p>
+
+<a href="#" class="primary-btn">Register Now</a>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 ConnectHub |
+Designed for Internship Project
+
+</p>
+
+</footer>
+
+
+<script>
+    // Mobile Menu
+
+const menu = document.querySelector(".menu");
+const navLinks = document.querySelector(".nav-links");
+
+menu.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+// Navbar Background on Scroll
+
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+
+    if(window.scrollY > 50){
+        header.style.background = "rgba(15,23,42,0.95)";
+    }else{
+        header.style.background = "rgba(0,0,0,0.25)";
+    }
+});
+
+// Smooth Fade-in Animation
+
+const cards = document.querySelectorAll(".feature-card");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.style.opacity="1";
+            entry.target.style.transform="translateY(0)";
+        }
+    });
+},{
+    threshold:0.2
+});
+
+cards.forEach(card=>{
+    card.style.opacity="0";
+    card.style.transform="translateY(40px)";
+    card.style.transition=".8s";
+    observer.observe(card);
+});
+</script>
+
+</body>
+</html>

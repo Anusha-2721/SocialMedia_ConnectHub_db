@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | ConnectHub</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left">
+
+        <h1>Join ConnectHub</h1>
+
+        <p>
+            Create your account and start sharing your
+            memories with the world.
+        </p>
+
+        <img src="https://undraw.co/api/illustrations/social.svg" alt="">
+
+    </div>
+
+    <div class="right">
+
+        <form id="registerForm">
+
+            <h2>Create Account</h2>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                type="text"
+                placeholder="Full Name"
+                id="name">
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                type="email"
+                placeholder="Email"
+                id="email">
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-at"></i>
+
+                <input
+                type="text"
+                placeholder="Username"
+                id="username">
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                type="password"
+                placeholder="Password"
+                id="password">
+
+                <span id="togglePassword">
+                    <i class="fa-solid fa-eye"></i>
+                </span>
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <input
+                type="password"
+                placeholder="Confirm Password"
+                id="confirmPassword">
+
+            </div>
+
+            <button type="submit">
+                Register
+            </button>
+
+            <p class="login-text">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+    // Show / Hide Password
+
+const togglePassword = document.getElementById("togglePassword");
+const password = document.getElementById("password");
+
+togglePassword.addEventListener("click", () => {
+
+    if(password.type === "password"){
+        password.type = "text";
+        togglePassword.innerHTML =
+        '<i class="fa-solid fa-eye-slash"></i>';
+    }
+    else{
+        password.type = "password";
+        togglePassword.innerHTML =
+        '<i class="fa-solid fa-eye"></i>';
+    }
+
+});
+
+const form = document.getElementById("registerForm");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const full_name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const username = document.getElementById("username").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+
+    if (!full_name || !email || !username || !password || !confirmPassword) {
+        alert("Please fill all fields.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    try {
+
+        const response = await fetch("http://localhost:5000/api/auth/registerUser", {
+
+            method: "POST",
+
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+            body: JSON.stringify({
+                full_name,
+                username,
+                email,
+                password
+            })
+
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+
+            alert(data.message);
+
+            form.reset();
+
+            window.location.href = "login.html";
+
+        } else {
+
+            alert(data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to connect to the server.");
+
+    }
+
+});
+</script>
+
+</body>
+</html>

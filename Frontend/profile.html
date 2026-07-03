@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ConnectHub | Profile</title>
+
+<link rel="stylesheet" href="profile.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">
+
+<i class="fa-solid fa-share-nodes"></i>
+
+<span>ConnectHub</span>
+
+</div>
+
+<div class="search-box">
+
+<input type="text" placeholder="Search...">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+</div>
+
+<div class="nav-icons">
+
+<i class="fa-solid fa-house"></i>
+
+<div class="notification">
+
+<i class="fa-regular fa-bell"></i>
+
+<span class="badge">3</span>
+
+</div>
+
+<div class="profile-menu">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+</div>
+
+</div>
+
+</nav>
+
+</header>
+
+<!-- ================= PROFILE ================= -->
+
+<section class="profile-container">
+
+<!-- Cover -->
+
+<div class="cover-photo">
+
+<img src="https://picsum.photos/1400/400?random=11">
+
+</div>
+
+<!-- Profile Info -->
+
+<div class="profile-info">
+
+<div class="profile-left">
+
+<img
+id="profileImage"
+class="profile-pic"
+src="https://i.pravatar.cc/200?img=12">
+
+<div>
+
+<h2>
+
+<span id="fullName">John Smith</span>
+
+<i class="fa-solid fa-circle-check verified"></i>
+
+</h2>
+
+<p id="username">@johnsmith</p>
+
+<p class="bio">
+
+Frontend Developer 🚀 | UI Designer 🎨
+
+</p>
+
+<div class="details">
+
+<span>
+
+<i class="fa-solid fa-location-dot"></i>
+
+Hyderabad
+
+</span>
+
+<span>
+
+<i class="fa-solid fa-calendar"></i>
+
+Joined June 2026
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="profile-buttons">
+
+<button class="edit-btn">
+
+<i class="fa-solid fa-user-pen"></i>
+
+Edit Profile
+
+</button>
+
+<button class="share-btn">
+
+<i class="fa-solid fa-share"></i>
+
+Share Profile
+
+</button>
+
+</div>
+
+</div>
+
+<!-- Stats -->
+
+<div class="stats">
+
+<div>
+
+<h2>25</h2>
+
+<p>Posts</p>
+
+</div>
+
+<div>
+
+<h2>1.2K</h2>
+
+<p>Followers</p>
+
+</div>
+
+<div>
+
+<h2>980</h2>
+
+<p>Following</p>
+
+</div>
+
+</div>
+
+<!-- Main Layout -->
+
+<div class="profile-grid">
+
+<!-- About -->
+
+<div class="left-card">
+
+<h3>
+
+<i class="fa-solid fa-user"></i>
+
+About
+
+</h3>
+
+<p>
+
+💻 HTML, CSS, JavaScript
+
+</p>
+
+<p>
+
+⚙️ Node.js & Express.js
+
+</p>
+
+<p>
+
+🗄️ MySQL Database
+
+</p>
+
+<p>
+
+🎓 B.Tech Computer Science
+
+</p>
+
+<p>
+
+<p>
+
+📧 <span id="email">john@gmail.com</span>
+
+</p>
+
+</p>
+
+<p>
+
+📱 +91 9876543210
+
+</p>
+
+</div>
+
+<!-- Posts -->
+
+<div class="posts-section">
+
+<h3>
+
+My Posts
+
+</h3>
+<!-- ================= POSTS GRID ================= -->
+
+<div class="posts-grid">
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=1" alt="Post 1">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=2" alt="Post 2">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=3" alt="Post 3">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=4" alt="Post 4">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=5" alt="Post 5">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=6" alt="Post 6">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=7" alt="Post 7">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=8" alt="Post 8">
+</div>
+
+<div class="post-card">
+<img src="https://picsum.photos/350/350?random=9" alt="Post 9">
+</div>
+
+</div>
+
+</div>
+
+<!-- ================= RIGHT SIDEBAR ================= -->
+
+<div class="right-card">
+
+<h3>
+
+Suggested Friends
+
+</h3>
+
+<div class="friend">
+
+<img src="https://i.pravatar.cc/100?img=41" alt="">
+
+<div>
+
+<h4>Chaithanya</h4>
+
+<p>Cyber Security</p>
+
+</div>
+
+<button class="follow-btn">
+
+Follow
+
+</button>
+
+</div>
+
+<div class="friend">
+
+<img src="https://i.pravatar.cc/100?img=55" alt="">
+
+<div>
+
+<h4>Karthik</h4>
+
+<p>Mechanical Engineer</p>
+
+</div>
+
+<button class="follow-btn">
+
+Follow
+
+</button>
+
+</div>
+
+<div class="friend">
+
+<img src="https://i.pravatar.cc/100?img=68" alt="">
+
+<div>
+
+<h4>Poojasree</h4>
+
+<p>Data Analyst</p>
+
+</div>
+
+<button class="follow-btn">
+
+Follow
+
+</button>
+
+</div>
+
+<div class="friend">
+
+<img src="https://i.pravatar.cc/100?img=22" alt="">
+
+<div>
+
+<h4>Sravya</h4>
+
+<p>Google Student Ambassidor</p>
+
+</div>
+
+<button class="follow-btn">
+
+Follow
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>
+
+© 2026 ConnectHub | Built with ❤️ using HTML, CSS & JavaScript
+
+</p>
+
+</footer>
+
+<script>
+    // =====================================
+// CONNECTHUB PROFILE PAGE
+// profile.js - Part 1
+// =====================================
+
+// ===============================
+// EDIT PROFILE
+// ===============================
+const editBtn = document.querySelector(".edit-btn");
+
+if (editBtn) {
+
+    editBtn.addEventListener("click", () => {
+
+        window.location.href = "edit-Profile.html";
+
+    });
+
+}
+
+// ===============================
+// SHARE PROFILE
+// ===============================
+
+const shareBtn = document.querySelector(".share-btn");
+
+if (shareBtn) {
+
+    shareBtn.addEventListener("click", async () => {
+
+        if (navigator.share) {
+
+            try {
+
+                await navigator.share({
+
+                    title: "ConnectHub Profile",
+
+                    text: "Check out my ConnectHub Profile!",
+
+                    url: window.location.href
+
+                });
+
+            } catch (err) {
+
+                console.log(err);
+
+            }
+
+        } else {
+
+            navigator.clipboard.writeText(window.location.href);
+
+            alert("Profile link copied!");
+
+        }
+
+    });
+
+}
+
+// ===============================
+// FOLLOW BUTTON
+// ===============================
+
+document.querySelectorAll(".follow-btn").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if (button.innerText === "Follow") {
+
+            button.innerText = "Following";
+
+            button.style.background = "#22c55e";
+
+        } else {
+
+            button.innerText = "Follow";
+
+            button.style.background = "#0ea5e9";
+
+        }
+
+    });
+
+});
+
+// ===============================
+// NOTIFICATION BADGE
+// ===============================
+
+const badge = document.querySelector(".badge");
+
+let notificationCount = 3;
+
+function updateBadge() {
+
+    if (badge) {
+
+        badge.innerText = notificationCount;
+
+    }
+
+}
+
+// Follow click → Notification increase
+
+document.querySelectorAll(".follow-btn").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        notificationCount++;
+
+        updateBadge();
+
+    });
+
+});
+// =====================================
+// CONNECTHUB PROFILE PAGE
+// profile.js - Part 2
+// =====================================
+
+// ===============================
+// ANIMATED STATS COUNTER
+// ===============================
+
+const stats = document.querySelectorAll(".stats h2");
+
+stats.forEach(stat => {
+
+    const targetText = stat.innerText;
+
+    const number = parseFloat(targetText);
+
+    if (isNaN(number)) return;
+
+    let current = 0;
+
+    const increment = number / 50;
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= number) {
+
+            stat.innerText = targetText;
+
+            clearInterval(timer);
+
+        }
+
+        else {
+
+            if (targetText.includes("K")) {
+
+                stat.innerText = current.toFixed(1) + "K";
+
+            }
+
+            else {
+
+                stat.innerText = Math.floor(current);
+
+            }
+
+        }
+
+    }, 30);
+
+});
+
+// ===============================
+// HOME BUTTON
+// ===============================
+
+const homeBtn = document.querySelector(".fa-house");
+
+if(homeBtn){
+
+    homeBtn.addEventListener("click",()=>{
+
+        window.location.href="feed.html";
+
+    });
+
+}
+
+// ===============================
+// SEARCH BAR (Demo)
+// ===============================
+
+const searchInput=document.querySelector(".search-box input");
+
+if(searchInput){
+
+    searchInput.addEventListener("keyup",()=>{
+
+        const value=searchInput.value.toLowerCase();
+
+        document.querySelectorAll(".friend").forEach(friend=>{
+
+            const text=friend.innerText.toLowerCase();
+
+            if(text.includes(value)){
+
+                friend.style.display="flex";
+
+            }
+
+            else{
+
+                friend.style.display="none";
+
+            }
+
+        });
+
+    });
+
+}
+
+// ===============================
+// POSTS HOVER EFFECT
+// ===============================
+
+document.querySelectorAll(".post-card").forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.boxShadow="0 15px 30px rgba(56,189,248,.35)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.boxShadow="none";
+
+    });
+
+});
+
+// ===============================
+// PROFILE IMAGE CLICK
+// ===============================
+
+const profilePic=document.querySelector(".profile-pic");
+
+if(profilePic){
+
+    profilePic.addEventListener("click",()=>{
+
+        alert("Profile picture viewer will be added after backend integration.");
+
+    });
+
+}
+
+console.log("✅ Profile.js Part 2 Loaded");
+// =====================================
+// CONNECTHUB PROFILE PAGE
+// profile.js - Part 3 (Final)
+// =====================================
+
+// ===============================
+// IMAGE PREVIEW MODAL
+// ===============================
+
+const postImages = document.querySelectorAll(".post-card img");
+
+const modal = document.createElement("div");
+
+modal.style.cssText = `
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.9);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+cursor:pointer;
+`;
+
+const modalImg = document.createElement("img");
+
+modalImg.style.cssText = `
+max-width:90%;
+max-height:90%;
+border-radius:15px;
+box-shadow:0 0 30px rgba(255,255,255,.2);
+`;
+
+modal.appendChild(modalImg);
+
+document.body.appendChild(modal);
+
+postImages.forEach(img=>{
+
+    img.addEventListener("click",()=>{
+
+        modal.style.display="flex";
+
+        modalImg.src=img.src;
+
+    });
+
+});
+
+// Close Modal
+
+modal.addEventListener("click",()=>{
+
+    modal.style.display="none";
+
+});
+
+// ESC Key Close
+
+document.addEventListener("keydown",(e)=>{
+
+    if(e.key==="Escape"){
+
+        modal.style.display="none";
+
+    }
+
+});
+
+// ===============================
+// WELCOME MESSAGE
+// ===============================
+
+window.addEventListener("load",()=>{
+
+    console.log("Welcome to ConnectHub Profile 🚀");
+
+});
+
+// ===============================
+// PROFILE CARD ANIMATION
+// ===============================
+
+const cards=document.querySelectorAll(".left-card,.posts-section,.right-card");
+
+cards.forEach((card,index)=>{
+
+    card.style.opacity="0";
+    card.style.transform="translateY(40px)";
+
+    setTimeout(()=>{
+
+        card.style.transition=".6s";
+
+        card.style.opacity="1";
+
+        card.style.transform="translateY(0)";
+
+    },index*200);
+
+});
+
+// ===============================
+// LIVE CLOCK
+// ===============================
+
+function updateTime(){
+
+    const now=new Date();
+
+    document.title=
+    "ConnectHub | "+
+    now.toLocaleTimeString();
+
+}
+
+setInterval(updateTime,1000);
+
+// ===============================
+// PAGE LOADED
+// ===============================
+
+console.log("🚀 ConnectHub Profile Loaded Successfully");
+// =====================================
+// LOAD USER PROFILE
+// =====================================
+
+async function loadProfile() {
+
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (!user) {
+
+        alert("Please login first.");
+
+        window.location.href = "login.html";
+
+        return;
+
+    }
+
+    try {
+
+        const response = await fetch(
+            `http://localhost:5000/api/users/getProfile/${user.id}`
+        );
+
+        const data = await response.json();
+
+        if (!data.success) {
+
+            alert(data.message);
+
+            return;
+
+        }
+
+        const profile = data.user;
+
+        document.getElementById("fullName").innerText =
+            profile.full_name;
+
+        document.getElementById("username").innerText =
+            "@" + profile.username;
+
+        document.getElementById("email").innerText =
+            profile.email;
+
+        if (profile.profile_image) {
+
+            document.getElementById("profileImage").src =
+                `http://localhost:5000${profile.profile_image}`;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Server Error");
+
+    }
+
+}
+
+loadProfile();
+</script>
+
+</body>
+
+</html>

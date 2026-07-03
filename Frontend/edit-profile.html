@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectHub | Edit Profile</title>
+
+    <link rel="stylesheet" href="edit-profile.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-share-nodes"></i>
+
+                <span>ConnectHub</span>
+
+            </div>
+
+            <div class="nav-links">
+
+                <a href="feed.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+
+                <a href="profile.html">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= EDIT PROFILE ================= -->
+
+    <section class="edit-container">
+
+        <div class="edit-card">
+
+            <h1>
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                Edit Profile
+
+            </h1>
+
+            <!-- Cover Photo -->
+
+            <div class="cover-section">
+
+                <img
+                    id="coverPreview"
+                    src="https://picsum.photos/1200/350?random=15"
+                    alt="Cover">
+
+                <label class="upload-cover">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Cover
+
+                    <input
+                        type="file"
+                        id="coverInput"
+                        accept="image/*"
+                        hidden>
+
+                </label>
+
+            </div>
+
+            <!-- Profile Photo -->
+
+            <div class="profile-section">
+
+                <img
+                    id="profilePreview"
+                    src="https://i.pravatar.cc/200?img=12"
+                    alt="Profile">
+
+                <label class="upload-profile">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Photo
+
+                    <input
+                        id="profileImage"
+                        type="file"
+                        accept="image/*"
+                        hidden>
+
+                </label>
+
+            </div>
+
+            <!-- FORM -->
+
+            <form id="editForm">
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <input
+                        id="fullName"
+                        type="text"
+                        placeholder="Enter your full name"
+                        value="John Smith">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Username</label>
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Username"
+                        value="@johnsmith">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Bio</label>
+
+                    <textarea
+                        rows="4"
+                        placeholder="Write something about yourself...">Frontend Developer 🚀 | UI Designer 🎨</textarea>
+
+                </div>
+                                <div class="input-group">
+
+                    <label>Email</label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        value="johnsmith@gmail.com">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Phone Number</label>
+
+                    <input
+                        type="tel"
+                        placeholder="Enter phone number"
+                        value="+91 9876543210">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Location</label>
+
+                    <input
+                        type="text"
+                        placeholder="Your location"
+                        value="Hyderabad, India">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Skills</label>
+
+                    <input
+                        type="text"
+                        placeholder="HTML, CSS, JavaScript..."
+                        value="HTML, CSS, JavaScript, Node.js, Express.js, MySQL">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Education</label>
+
+                    <input
+                        type="text"
+                        placeholder="Your education"
+                        value="B.Tech - Computer Science Engineering">
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Website</label>
+
+                    <input
+                        type="url"
+                        placeholder="https://yourwebsite.com"
+                        value="https://github.com/johnsmith">
+
+                </div>
+
+                <!-- BUTTONS -->
+
+                <div class="button-group">
+
+                    <button
+                        
+                           id="saveBtn"
+                           class="save-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Changes
+
+                    </button>
+
+                    <button
+                        type="reset"
+                        class="cancel-btn">
+
+                        <i class="fa-solid fa-xmark"></i>
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 ConnectHub | Edit Profile Page
+
+        </p>
+
+    </footer>
+
+    <script>
+       // =========================================
+// CONNECTHUB EDIT PROFILE
+// =========================================
+
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+    alert("Please Login First");
+    window.location.href = "login.html";
+}
+
+// ===============================
+// IMAGE PREVIEW
+// ===============================
+
+const profileInput = document.getElementById("profileImage");
+const profilePreview = document.getElementById("profilePreview");
+
+if (profileInput) {
+
+    profileInput.addEventListener("change", function () {
+
+        const file = this.files[0];
+
+        if (!file) return;
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+
+            profilePreview.src = e.target.result;
+
+        };
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+// ===============================
+// LOAD PROFILE
+// ===============================
+
+async function loadProfile() {
+
+    try {
+
+        const response = await fetch(
+            `http://localhost:5000/api/users/getProfile/${user.id}`
+        );
+
+        const data = await response.json();
+
+        if (!data.success) {
+
+            alert(data.message);
+
+            return;
+
+        }
+
+        document.getElementById("fullName").value =
+            data.user.full_name;
+
+        document.getElementById("username").value =
+            data.user.username;
+
+        document.getElementById("email").value =
+            data.user.email;
+
+        if (data.user.profile_image) {
+
+            profilePreview.src =
+                "http://localhost:5000" +
+                data.user.profile_image;
+
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+loadProfile();
+
+// ===============================
+// SAVE PROFILE
+// ===============================
+const form = document.getElementById("editForm");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const full_name =
+        document.getElementById("fullName").value.trim();
+
+    const username =
+        document.getElementById("username").value.trim();
+
+    const email =
+        document.getElementById("email").value.trim();
+
+    if (!full_name || !username || !email) {
+
+        alert("Please fill all fields");
+
+        return;
+
+    }
+
+    try {
+
+        // ===========================
+        // Update Name, Username, Email
+        // ===========================
+
+        const response = await fetch(
+            `http://localhost:5000/api/users/updateProfile/${user.id}`,
+            {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    full_name,
+                    username,
+                    email
+                })
+            }
+        );
+
+        const data = await response.json();
+
+        if (!data.success) {
+            alert(data.message);
+            return;
+        }
+
+        // ===========================
+        // Upload Profile Image
+        // ===========================
+
+        const imageFile =
+            document.getElementById("profileImage").files[0];
+
+        if (imageFile) {
+
+            const formData = new FormData();
+
+            formData.append("profileImage", imageFile);
+
+            const imageResponse = await fetch(
+                `http://localhost:5000/api/users/uploadProfileImage/${user.id}`,
+                {
+                    method: "PUT",
+                    body: formData
+                }
+            );
+
+            const imageData = await imageResponse.json();
+
+            if (!imageData.success) {
+                alert(imageData.message);
+                return;
+            }
+
+        }
+
+        alert("✅ Profile Updated Successfully");
+
+        window.location.href = "profile.html";
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert("Server Error");
+
+    }
+
+});
+// ===============================
+// CANCEL
+// ===============================
+
+const cancelBtn = document.querySelector(".cancel-btn");
+
+cancelBtn.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    window.location.href = "profile.html";
+
+});
+
+console.log("🚀 Edit Profile Loaded");
+</script>
+</body>
+</html>

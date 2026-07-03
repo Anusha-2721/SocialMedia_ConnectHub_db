@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ConnectHub | Friends</title>
+
+<link rel="stylesheet" href="friends.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h2>
+
+<i class="fa-solid fa-users"></i>
+
+Friends
+
+</h2>
+
+<a href="feed.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+</header>
+
+<div class="container">
+
+<h1>Your Friends</h1>
+
+<div class="friends-list">
+
+<div class="friend-card">
+
+<img src="https://i.pravatar.cc/100?img=11">
+
+<div>
+
+<h3>Anusha</h3>
+
+<p>Online 🟢</p>
+
+</div>
+
+<button>Message</button>
+
+</div>
+
+<div class="friend-card">
+
+<img src="https://i.pravatar.cc/100?img=12">
+
+<div>
+
+<h3>Karthik</h3>
+
+<p>Offline ⚫</p>
+
+</div>
+
+<button>Message</button>
+
+</div>
+
+<div class="friend-card">
+
+<img src="https://i.pravatar.cc/100?img=15">
+
+<div>
+
+<h3>Rahul</h3>
+
+<p>Online 🟢</p>
+
+</div>
+
+<button>Message</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+    // ======================================
+// CONNECTHUB FRIENDS
+// ======================================
+
+const buttons = document.querySelectorAll(".friend-card button");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        window.location.href = "messages.html";
+
+    });
+
+});
+
+console.log("✅ Friends Page Loaded");
+</script>
+
+</body>
+
+</html>

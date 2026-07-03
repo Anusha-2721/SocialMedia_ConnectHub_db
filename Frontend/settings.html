@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ConnectHub | Settings</title>
+
+    <link rel="stylesheet" href="settings.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-comments"></i>
+
+            <span>ConnectHub</span>
+
+        </div>
+
+        <a href="feed.html" class="home-btn">
+
+            <i class="fa-solid fa-house"></i>
+
+            Home
+
+        </a>
+
+    </header>
+
+    <!-- ================= SETTINGS ================= -->
+
+    <main class="settings-container">
+
+        <h1>
+
+            <i class="fa-solid fa-gear"></i>
+
+            Settings
+
+        </h1>
+
+        <!-- My Profile -->
+
+        <div class="setting-card" id="profileBtn">
+
+            <div class="setting-left">
+
+                <i class="fa-solid fa-user"></i>
+
+                <div>
+
+                    <h3>My Profile</h3>
+
+                    <p>View your profile information</p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-angle-right"></i>
+
+        </div>
+
+        <!-- Edit Profile -->
+
+        <div class="setting-card" id="editProfileBtn">
+
+            <div class="setting-left">
+
+                <i class="fa-solid fa-user-pen"></i>
+
+                <div>
+
+                    <h3>Edit Profile</h3>
+
+                    <p>Update your personal details</p>
+
+                </div>
+
+            </div>
+
+            <i class="fa-solid fa-angle-right"></i>
+
+        </div>
+
+        <!-- Dark Mode -->
+
+        <div class="setting-card">
+
+            <div class="setting-left">
+
+                <i class="fa-solid fa-moon"></i>
+
+                <div>
+
+                    <h3>Dark Mode</h3>
+
+                    <p>Enable dark appearance</p>
+
+                </div>
+
+            </div>
+
+            <label class="switch">
+
+                <input type="checkbox" id="darkMode">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+        <!-- Notifications -->
+
+        <div class="setting-card">
+
+            <div class="setting-left">
+
+                <i class="fa-solid fa-bell"></i>
+
+                <div>
+
+                    <h3>Notification Settings</h3>
+
+                    <p>Receive likes & comments notifications</p>
+
+                </div>
+
+            </div>
+
+            <label class="switch">
+
+                <input type="checkbox" id="notifications">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+        <!-- Privacy -->
+
+        <div class="setting-card">
+
+            <div class="setting-left">
+
+                <i class="fa-solid fa-lock"></i>
+
+                <div>
+
+                    <h3>Privacy</h3>
+
+                    <p>Make your account private</p>
+
+                </div>
+
+            </div>
+
+            <label class="switch">
+
+                <input type="checkbox" id="privacy">
+
+                <span class="slider"></span>
+
+            </label>
+
+        </div>
+
+        <!-- Change Password -->
+
+        <div class="password-card">
+
+            <h2>
+
+                <i class="fa-solid fa-key"></i>
+
+                Change Password
+
+            </h2>
+
+            <input
+                type="password"
+                id="currentPassword"
+                placeholder="Current Password">
+
+            <input
+                type="password"
+                id="newPassword"
+                placeholder="New Password">
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password">
+
+            <button id="changePasswordBtn">
+
+                Update Password
+
+            </button>
+
+        </div>
+
+        <!-- About -->
+
+        <div class="about-card">
+
+            <h2>
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                About ConnectHub
+
+            </h2>
+
+            <p>
+
+                <strong>Version:</strong>
+
+                1.0
+
+            </p>
+
+            <p>
+
+                <strong>Developer:</strong>
+
+                Mallem Kondaiah
+
+            </p>
+
+            <p>
+
+                <strong>Project:</strong>
+
+                Mini Social Media Platform
+
+            </p>
+
+            <p>
+
+                <strong>Internship:</strong>
+
+                ShadowFox
+
+            </p>
+
+        </div>
+
+        <!-- Logout -->
+
+        <button class="logout-btn" id="logoutBtn">
+
+            <i class="fa-solid fa-right-from-bracket"></i>
+
+            Logout
+
+        </button>
+
+    </main>
+
+    <script>
+        // ==========================================
+// CONNECTHUB SETTINGS PAGE
+// settings.js
+// ==========================================
+
+// -------------------------------
+// MY PROFILE
+// -------------------------------
+
+const profileBtn = document.getElementById("profileBtn");
+
+if (profileBtn) {
+
+    profileBtn.addEventListener("click", () => {
+
+        window.location.href = "profile.html";
+
+    });
+
+}
+
+// -------------------------------
+// EDIT PROFILE
+// -------------------------------
+
+const editProfileBtn = document.getElementById("editProfileBtn");
+
+if (editProfileBtn) {
+
+    editProfileBtn.addEventListener("click", () => {
+
+        window.location.href = "edit-profile.html";
+
+    });
+
+}
+
+// -------------------------------
+// DARK MODE
+// -------------------------------
+
+const darkMode = document.getElementById("darkMode");
+
+// Load saved mode
+if (localStorage.getItem("theme") === "light") {
+
+    document.body.classList.add("light");
+
+    darkMode.checked = false;
+
+} else {
+
+    darkMode.checked = true;
+
+}
+
+darkMode.addEventListener("change", () => {
+
+    if (darkMode.checked) {
+
+        document.body.classList.remove("light");
+
+        localStorage.setItem("theme", "dark");
+
+    } else {
+
+        document.body.classList.add("light");
+
+        localStorage.setItem("theme", "light");
+
+    }
+
+});
+
+// -------------------------------
+// NOTIFICATIONS
+// -------------------------------
+
+const notifications = document.getElementById("notifications");
+
+if (localStorage.getItem("notifications") === "on") {
+
+    notifications.checked = true;
+
+}
+
+notifications.addEventListener("change", () => {
+
+    if (notifications.checked) {
+
+        localStorage.setItem("notifications", "on");
+
+        alert("🔔 Notifications Enabled");
+
+    } else {
+
+        localStorage.setItem("notifications", "off");
+
+        alert("🔕 Notifications Disabled");
+
+    }
+
+});
+
+// -------------------------------
+// PRIVACY
+// -------------------------------
+
+const privacy = document.getElementById("privacy");
+
+if (localStorage.getItem("privacy") === "private") {
+
+    privacy.checked = true;
+
+}
+
+privacy.addEventListener("change", () => {
+
+    if (privacy.checked) {
+
+        localStorage.setItem("privacy", "private");
+
+        alert("🔒 Account is now Private");
+
+    } else {
+
+        localStorage.setItem("privacy", "public");
+
+        alert("🌍 Account is now Public");
+
+    }
+
+});
+
+// -------------------------------
+// CHANGE PASSWORD
+// -------------------------------
+
+const changePasswordBtn =
+document.getElementById("changePasswordBtn");
+
+changePasswordBtn.addEventListener("click", () => {
+
+    const current =
+        document.getElementById("currentPassword").value;
+
+    const newPass =
+        document.getElementById("newPassword").value;
+
+    const confirm =
+        document.getElementById("confirmPassword").value;
+
+    if (!current || !newPass || !confirm) {
+
+        alert("Please fill all password fields.");
+
+        return;
+
+    }
+
+    if (newPass !== confirm) {
+
+        alert("Passwords do not match.");
+
+        return;
+
+    }
+
+    alert("✅ Password Updated Successfully");
+
+    document.getElementById("currentPassword").value = "";
+
+    document.getElementById("newPassword").value = "";
+
+    document.getElementById("confirmPassword").value = "";
+
+});
+
+// -------------------------------
+// LOGOUT
+// -------------------------------
+
+const logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener("click", () => {
+
+    const ok = confirm("Are you sure you want to logout?");
+
+    if (!ok) return;
+
+    localStorage.removeItem("user");
+
+    window.location.href = "login.html";
+
+});
+
+// -------------------------------
+// PAGE LOAD
+// -------------------------------
+
+console.log("✅ ConnectHub Settings Loaded Successfully");
+    </script>
+
+</body>
+
+</html>
