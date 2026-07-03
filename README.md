@@ -275,31 +275,6 @@ Logout
 
 ---
 
-# 📈 Project Progress Report
-
-| Module               | Status      |
-| -------------------- | ----------- |
-| User Authentication  | ✅ Completed |
-| Feed Page            | ✅ Completed |
-| Create Post          | ✅ Completed |
-| Image Upload         | ✅ Completed |
-| Like System          | ✅ Completed |
-| Comment System       | ✅ Completed |
-| Edit Post            | ✅ Completed |
-| Delete Post          | ✅ Completed |
-| User Profile         | ✅ Completed |
-| Edit Profile         | ✅ Completed |
-| Profile Image Upload | ✅ Completed |
-| Search Users         | ✅ Completed |
-| Settings Module      | ✅ Completed |
-| Messages Page        | ✅ Completed |
-| Friends Page         | ✅ Completed |
-| Responsive UI        | ✅ Completed |
-| MySQL Integration    | ✅ Completed |
-| REST APIs            | ✅ Completed |
-
----
-
 # 🚀 Future Enhancements
 
 * Real-Time Chat
@@ -331,7 +306,7 @@ Through this project, I gained practical experience in:
 
 # 👨‍💻 Developed By
 
-**Mallem Kondaiah**
+**Balisetti Anusha**
 
 ### Internship
 
